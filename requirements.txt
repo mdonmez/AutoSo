@@ -1,0 +1,14 @@
+orjson
+keyboard
+numpy
+pydantic
+sounddevice
+webrtcvad-wheels
+vosk
+model2vec
+fastnanoid
+joblib
+python-dotenv
+instructor
+PyMuPDF
+litellm
