@@ -1,0 +1,2 @@
+- [ ] Dokümantasyon eklenecek
+- [ ] Detaylı README yazılacak
