@@ -230,7 +230,7 @@ class TranscriptGenerator:
             item_name: Name of the item being processed for logging
 
         Returns:
-            List[Dict[str, Union[int, str, bool]]]: Processed transcript items with index, text, and fast_forward flag
+            List[Dict[str, Union[int, str, bool]]]: Processed transcript items with index, text, and early_forward flag
 
         Raises:
             Exception: If there's an error during LLM processing
@@ -249,7 +249,7 @@ class TranscriptGenerator:
                 transcript: str = Field(
                     ..., description="The spoken or written text segment."
                 )
-                fast_forward: bool = Field(
+                early_forward: bool = Field(
                     ...,
                     description="Whether to fast forward to the next transcript item.",
                 )
@@ -294,7 +294,7 @@ class TranscriptGenerator:
                 {
                     "transcript_index": item.transcript_index,
                     "transcript": item.transcript,
-                    "fast_forward": item.fast_forward,
+                    "early_forward": item.early_forward,
                 }
                 for item in llm_response.transcript
             ]

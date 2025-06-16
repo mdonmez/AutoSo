@@ -210,7 +210,7 @@ class RealtimeNavigator:
 
         match (
             is_current_source,
-            current_transcript.get("fast_forward", False),
+            current_transcript.get("early_forward", False),
             is_next_source_different,
         ):
             # Case 1: Fast-forward condition is met on the current transcript.

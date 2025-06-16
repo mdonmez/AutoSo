@@ -15,14 +15,14 @@ You will receive exactly two pieces of data:
    - Do not add, remove, or modify any words from the original transcript text
    - Preserve all punctuation and capitalization exactly as in the original
 
-2. **fast_forward Determination**
-   - Set `fast_forward: false` ONLY if the slide text explicitly contains phrases that indicate waiting is required, such as:
+2. **early_forward Determination**
+   - Set `early_forward: false` ONLY if the slide text explicitly contains phrases that indicate waiting is required, such as:
      - "let me see your hands"
      - "wait a moment"
      - "any questions"
      - "raise your hand"
      - "pause for"
-   - Set `fast_forward: true` for all other cases
+   - Set `early_forward: true` for all other cases
    - Be extremely conservative - only set to `false` when explicitly indicated
 
 ## OUTPUT FORMAT
@@ -34,7 +34,7 @@ Your response MUST be a valid JSON object with the following EXACT structure:
     {
       "index": 1,
       "text": "exact transcript text for slide 1",
-      "fast_forward": true
+      "early_forward": true
     },
     ...
   ]
@@ -49,7 +49,7 @@ Your response MUST be a valid JSON object with the following EXACT structure:
 5. Ensure all strings are properly escaped for JSON
 6. The `index` field must be a number starting from 1
 7. The `text` field must be a string containing only the transcript text
-8. The `fast_forward` field must be a boolean (true/false)
+8. The `early_forward` field must be a boolean (true/false)
 
 ## EXAMPLE INPUT/OUTPUT
 
@@ -61,4 +61,4 @@ Transcript Text (English):
 how does ai work i want to start with a question is there anyone here who doesnt use ai or thinks they dont benefit from it let me see your hands pause for reaction oh i can see a few hands or maybe none thats interesting alright now you might say it would be easier to ask who is using ai but these days the answer is pretty obvious the truth is every time you scroll through social media search for something on google or let netflix suggest what to watch next youre using or at least contributing to artificial intelligence we often think of ai as something futuristic something far away but what if i told you its already shaping your daily life in ways you dont even notice whether its the videos you watch the posts you scroll through or even the ads you see ai is silently guiding your choices now heres the real question are we using ai or is ai using us think about it how much of your screen time is driven by ai powered suggestions
 
 ## Your Output Data (The Slide Data is 10 pieces and you must create 10 transcript pieces. So: 1:1)
-{"transcript":[{"fast_forward":true,"transcript":"how does ai work","transcript_index":1},{"fast_forward":false,"transcript":"i want to start with a question is there anyone here who doesnt use ai or thinks they dont benefit from it let me see your hands","transcript_index":2},{"fast_forward":true,"transcript":"oh i can see a few hands or maybe none thats interesting","transcript_index":3},{"fast_forward":true,"transcript":"alright now you might say it would be easier to ask who is using ai but these days the answer is pretty obvious","transcript_index":4},{"fast_forward":true,"transcript":"the truth is every time you scroll through social media search for something on google or let netflix suggest what to watch next youre using or at least contributing to artificial intelligence","transcript_index":5},{"fast_forward":true,"transcript":"we often think of ai as something futuristic something far away","transcript_index":6},{"fast_forward":true,"transcript":"but what if i told you its already shaping your daily life in ways you dont even notice","transcript_index":7},{"fast_forward":true,"transcript":"whether its the videos you watch the posts you scroll through or even the ads you see ai is silently guiding your choices","transcript_index":8},{"fast_forward":true,"transcript":"now heres the real question are we using ai or is ai using us","transcript_index":9},{"fast_forward":true,"transcript":"think about it how much of your screen time is driven by ai powered suggestions","transcript_index":10}]}
+{"transcript":[{"early_forward":true,"transcript":"how does ai work","transcript_index":1},{"early_forward":false,"transcript":"i want to start with a question is there anyone here who doesnt use ai or thinks they dont benefit from it let me see your hands","transcript_index":2},{"early_forward":true,"transcript":"oh i can see a few hands or maybe none thats interesting","transcript_index":3},{"early_forward":true,"transcript":"alright now you might say it would be easier to ask who is using ai but these days the answer is pretty obvious","transcript_index":4},{"early_forward":true,"transcript":"the truth is every time you scroll through social media search for something on google or let netflix suggest what to watch next youre using or at least contributing to artificial intelligence","transcript_index":5},{"early_forward":true,"transcript":"we often think of ai as something futuristic something far away","transcript_index":6},{"early_forward":true,"transcript":"but what if i told you its already shaping your daily life in ways you dont even notice","transcript_index":7},{"early_forward":true,"transcript":"whether its the videos you watch the posts you scroll through or even the ads you see ai is silently guiding your choices","transcript_index":8},{"early_forward":true,"transcript":"now heres the real question are we using ai or is ai using us","transcript_index":9},{"early_forward":true,"transcript":"think about it how much of your screen time is driven by ai powered suggestions","transcript_index":10}]}
