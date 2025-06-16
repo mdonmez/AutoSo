@@ -185,7 +185,9 @@ class RealtimeNavigator:
     ) -> tuple[dict | None, list[SuggestionResult]]:
         if not candidates or not query:
             return None, []
-        best_matches: list[tuple[str, float]] = self.matcher.get_best_matches(query=query, candidates=candidates)  # type: ignore
+        best_matches: list[tuple[str, float]] = self.matcher.get_best_matches(
+            query=query, candidates=candidates
+        )  # type: ignore
         suggestions = [(score, chunk_id) for chunk_id, score in best_matches[:3]]
         if not best_matches:
             return None, suggestions
@@ -213,7 +215,7 @@ class RealtimeNavigator:
             current_transcript.get("early_forward", False),
             is_next_source_different,
         ):
-            # Case 1: Fast-forward condition is met on the current transcript.
+            # Case 1: Early forward condition is met on the current transcript.
             case (True, True, True) if (current_idx + 1) < len(self.all_transcripts):
                 return "forward", self.all_transcripts[current_idx + 1]["transcript_id"]
 
@@ -447,13 +449,14 @@ def setup_keyboard_hooks():
 
 
 if __name__ == "__main__":
-    print("Initializing Realtime Navigator...")
+    print(
+        "Initializing Realtime Navigator, VAD, Vosk STT engine and Back-end Workers..."
+    )
     navigator = RealtimeNavigator(
         chunks_path=pathlib.Path("data/yasin/yasin_chunks.json"),
         transcripts_path=pathlib.Path("data/yasin/yasin_transcript.json"),
     )
 
-    print("Initializing VAD and STT engines...")
     model = Model(MODEL_PATH)
     vad_engine = webrtcvad.Vad(2)
 
@@ -479,8 +482,8 @@ if __name__ == "__main__":
     navigation_worker.start()
     setup_keyboard_hooks()
 
-    print("\n--- Application Ready ---")
-    print("Press [SPACE] to start/stop recording.")
+    print("\n--- Ready ---")
+    print("Press [SPACE] to start/stop recording and navigation.")
     print("Press [LEFT]/[RIGHT] arrow keys to manually navigate.")
     print(f"Starting at transcript index: {current_transcript_index}")
 

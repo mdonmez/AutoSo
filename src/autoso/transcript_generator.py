@@ -257,8 +257,8 @@ class TranscriptGenerator:
             transcript: List[TranscriptItem] = Field(
                 ...,
                 description=f"A list of transcript items, each containing text segment and its index. Must be equal to the number of slides. ({len(output_slide)})",
-                min_items=len(output_slide),  # type: ignore
-                max_items=len(output_slide),  # type: ignore
+                min_items=len(output_slide),
+                max_items=len(output_slide),
             )
 
         try:
