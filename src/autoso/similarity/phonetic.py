@@ -114,7 +114,7 @@ class Phonetic:
 
             return dp[len2]
 
-        except Exception as e:
+        except Exception:
             # Fallback: return maximum possible distance if any error occurs
             return max(len(word1_indices), len(word2_indices))
 

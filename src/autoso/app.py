@@ -453,8 +453,8 @@ if __name__ == "__main__":
         "Initializing Realtime Navigator, VAD, Vosk STT engine and Back-end Workers..."
     )
     navigator = RealtimeNavigator(
-        chunks_path=pathlib.Path("data/yasin/yasin_chunks.json"),
-        transcripts_path=pathlib.Path("data/yasin/yasin_transcript.json"),
+        chunks_path=pathlib.Path("data/ezgi/ezgi_chunks.json"),
+        transcripts_path=pathlib.Path("data/ezgi/ezgi_transcript.json"),
     )
 
     model = Model(MODEL_PATH)

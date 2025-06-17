@@ -399,25 +399,30 @@ if __name__ == "__main__":
     # Example file paths
     file_paths = [
         # ChunkInputItem(
-        #     name="betul",
-        #     input_path_transcript=Path("data/betul/betul_transcript.json"),
-        #     output_dir=Path("data/betul"),
+        #     name="yasin",
+        #     input_path_transcript=Path("data/yasin/yasin_transcript.json"),
+        #     output_dir=Path("data/yasin"),
         # ),
-        ChunkInputItem(
-            name="yasin",
-            input_path_transcript=Path("data/yasin/yasin_transcript.json"),
-            output_dir=Path("data/yasin"),
-        ),
-        ChunkInputItem(
-            name="ezgi",
-            input_path_transcript=Path("data/ezgi/ezgi_transcript.json"),
-            output_dir=Path("data/ezgi"),
-        ),
         # ChunkInputItem(
-        #     name="nehir",
-        #     input_path_transcript=Path("data/nehir/nehir_transcript.json"),
-        #     output_dir=Path("data/nehir"),
+        #     name="ezgi",
+        #     input_path_transcript=Path("data/ezgi/ezgi_transcript.json"),
+        #     output_dir=Path("data/ezgi"),
         # ),
+        ChunkInputItem(
+            name="nehir",
+            input_path_transcript=Path("data/nehir/nehir_transcript.json"),
+            output_dir=Path("data/nehir"),
+        ),
+        ChunkInputItem(
+            name="betul",
+            input_path_transcript=Path("data/betul/betul_transcript.json"),
+            output_dir=Path("data/betul"),
+        ),
+        ChunkInputItem(
+            name="hilal",
+            input_path_transcript=Path("data/hilal/hilal_transcript.json"),
+            output_dir=Path("data/hilal"),
+        ),
     ]
 
     # Initialize and run the generator

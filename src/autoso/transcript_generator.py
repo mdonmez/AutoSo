@@ -199,7 +199,7 @@ class TranscriptGenerator:
                     )
                     return normalized_text
 
-                except FileNotFoundError as e:
+                except FileNotFoundError:
                     self.logger.error(f"[{item_name}] File not found: {pdf_path}")
                     raise
                 except RuntimeError as e:
@@ -344,12 +344,12 @@ class TranscriptGenerator:
             transcript_text: str = transcript_text_result
 
             if not slide_data:
-                error_msg = f"No slide data extracted"
+                error_msg = "No slide data extracted"
                 self.logger.warning(f"[{item.name}] {error_msg}. Skipping")
                 return None, error_msg
 
             if not transcript_text:
-                error_msg = f"No transcript text extracted"
+                error_msg = "No transcript text extracted"
                 self.logger.warning(f"[{item.name}] {error_msg}. Skipping")
                 return None, error_msg
 
@@ -360,7 +360,7 @@ class TranscriptGenerator:
                 )
 
                 if not output_transcript:  # Check if output is empty
-                    error_msg = f"No transcript items generated"
+                    error_msg = "No transcript items generated"
                     self.logger.warning(f"[{item.name}] {error_msg}")
                     return None, error_msg
 
@@ -457,29 +457,35 @@ if __name__ == "__main__":
     # Example file paths
     file_paths = [
         # TranscriptInputItem(
-        #     name="betul",
-        #     input_path_slide=Path("data/betul/input_slide.pdf"),
-        #     input_path_text=Path("data/betul/input_text.pdf"),
-        #     output_dir=Path("data/betul"),
+        #     name="ezgi",
+        #     input_path_slide=Path("data/ezgi/input_slide.pdf"),
+        #     input_path_text=Path("data/ezgi/input_text.pdf"),
+        #     output_dir=Path("data/ezgi"),
         # ),
         TranscriptInputItem(
-            name="yasin",
-            input_path_slide=Path("data/yasin/input_slide.pdf"),
-            input_path_text=Path("data/yasin/input_text.pdf"),
-            output_dir=Path("data/yasin"),
-        ),
-        TranscriptInputItem(
-            name="ezgi",
-            input_path_slide=Path("data/ezgi/input_slide.pdf"),
-            input_path_text=Path("data/ezgi/input_text.pdf"),
-            output_dir=Path("data/ezgi"),
+            name="betul",
+            input_path_slide=Path("data/betul/input_slide.pdf"),
+            input_path_text=Path("data/betul/input_text.pdf"),
+            output_dir=Path("data/betul"),
         ),
         # TranscriptInputItem(
-        #     name="nehir",
-        #     input_path_slide=Path("data/nehir/input_slide.pdf"),
-        #     input_path_text=Path("data/nehir/input_text.pdf"),
-        #     output_dir=Path("data/nehir"),
+        #     name="yasin",
+        #     input_path_slide=Path("data/yasin/input_slide.pdf"),
+        #     input_path_text=Path("data/yasin/input_text.pdf"),
+        #     output_dir=Path("data/yasin"),
         # ),
+        TranscriptInputItem(
+            name="nehir",
+            input_path_slide=Path("data/nehir/input_slide.pdf"),
+            input_path_text=Path("data/nehir/input_text.pdf"),
+            output_dir=Path("data/nehir"),
+        ),
+        TranscriptInputItem(
+            name="hilal",
+            input_path_slide=Path("data/hilal/input_slide.pdf"),
+            input_path_text=Path("data/hilal/input_text.pdf"),
+            output_dir=Path("data/hilal"),
+        ),
     ]
 
     # Initialize and run the generator
