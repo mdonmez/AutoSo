@@ -49,9 +49,10 @@
       pip install -r requirements.txt
       ```
 3. Install a Vosk model from [here](https://alphacephei.com/vosk/models).
-    - *If you system is good enough, you can use `vosk-model-small-en-us-0.22`, else use `vosk-model-small-en-us-0.15`.*
+    - *If you system is good enough, you can use `vosk-model-en-us-0.22`, else use `vosk-model-small-en-us-0.15`.* (If you changed the model different than `vosk-model-en-us-0.22`, you should change the model path in the codebase! Look `app.py`'s line `75` for more information.)
 4. Unzip the model to `models` directory.
-5. Set the LLM API key in the `.env` file.
+5. Set the LLM API key in the `.env` file. 
+    - *If you want to use a different LLM than `gemini-flash-2.0`, you should change the model name in the codebase! Look `transcript_generator.py`'s line `274` for more information.*
     - *Gemini is the best choice for this project. The system will use `gemini-flash-2.0` model as default because it is fast, free and accurate. You can grab an API key from [here](https://aistudio.google.com/apikey) and set as `GEMINI_API_KEY`.*
 
 ## Usage
