@@ -7,7 +7,7 @@
 
 ## Highlights
 
-> Highly accurate and fast autonomous presentation operator and management tool.
+> Autonomous, highly accurate and fast presentation operator and management tool.
 
 - 📌 A fully automated tool for managing and controlling presentations without human intervention.
 - 🪶 [Lightweight and fast](https://www.preprints.org/manuscript/202505.0654/v1#:~:text=Vosk%20employs%20a%20lightweight%20architecture%20that%20allows%20it%20to%20run%20on%20devices%20with%20limited%20processing%20power%2C%20making%20it%20ideal%20for%20mobile%20and%20embedded%20systems), that can run even on low-end devices.
