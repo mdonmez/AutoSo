@@ -1,0 +1,1 @@
+Please download models from https://alphacephei.com/vosk/models and unzip them in the models folder.
